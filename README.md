@@ -1,3 +1,8 @@
-# holbertonschool-printf
-partners 
-Gabriel Blasina, Ignacio Gómez.
+#Printf - Group proyect(holberton-school)
+
+Gabriel Blasina
+Ignacio Gómez
+
+flow chart?
+
+end.
