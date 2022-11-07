@@ -35,6 +35,7 @@ int print_c(va_list arg)
 		_putchar(va_arg(arg, int));
 		return (1);
 	}
+	return (0);
 }
 /**
  *
@@ -50,4 +51,5 @@ int print_int(va_list arg)
 		_putchar('T');
 		_putchar('\n');
 	}
+	return (1);
 }
