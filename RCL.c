@@ -6,7 +6,7 @@
  *
  *
  */
-int (*RCL(const char *format))(va_list)
+int (*RCL(const char *format))(va_list arg)
 {
 	t_func data_type[] = {
 		{'s', print_str},
