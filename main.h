@@ -6,7 +6,7 @@
 typedef struct typefunctions
 {
 	char identifier;
-	int (*function)(va_list);
+	int (*function)(va_list arg);
 } t_func;
 
 int _printf(const char *format, ...);
