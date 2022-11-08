@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
+ * RCL - Function that This function traverses, compares and
+ * returns a function that receives a va_list as argument.
+ * @format: Is the string receives in _printf function.
  *
- *
- *
- *
+ * Return: The function asociated to data_type.
  */
 int (*RCL(const char *format))(va_list arg)
 {
@@ -14,7 +15,8 @@ int (*RCL(const char *format))(va_list arg)
 		{'\0', NULL}
 	};
 	int i;
-	
+
+
 	for (i = 0; data_type[i].identifier; i++)
 	{
 		if (format[0] == data_type[i].identifier)
@@ -24,5 +26,5 @@ int (*RCL(const char *format))(va_list arg)
 	}
 
 
-	return (data_type[0].function);
+	return (NULL);
 }
