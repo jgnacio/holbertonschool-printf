@@ -16,13 +16,12 @@ int _printf(const char *format, ...)
 		va_start(arg_list, format);
 		for (i = 0; format[i]; i++)
 		{
-			if (format[i] == '%')
+			if (format[i] == '%' && format[i + 1])
 			{
-				if (format[i + 1] == '%' && format[i + 1])
+				if (format[i + 1] == '%')
 				{
 					_putchar('%');
-					i++;
-					length_full++;
+					length_full = i;
 					continue;
 				}
 				f_print = RCL(&format[i + 1]);
@@ -34,15 +33,16 @@ int _printf(const char *format, ...)
 					i++;
 					continue;
 				}
-
 				length_full += f_print(arg_list);
 				i++;
 			}
-			else
+			else if (format[i + 1])
 			{
 				_putchar(format[i]);
 				length_full++;
 			}
+			else
+				return (-1);
 		}
 	}
 	else
