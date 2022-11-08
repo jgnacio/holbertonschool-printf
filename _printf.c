@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 {
 	int i;
 	va_list arg_list;
-	int (*f)(va_list);
-	int lenght_full = 0;
+	int (*f_print)(va_list);
+	int length_full = 0;
 
 	if (format)
 	{
@@ -20,39 +20,29 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%')
 			{
-				f = RCL(&format[i + 1]);
-				if (f == NULL)
+				if (format[i + 1] == '%')
 				{
-					if (format[i + 1] == '%')
-					{
-						_putchar('%');
-						lenght_full++;
-						i++;
-						continue;
-					}
-					else if (format[i + 1])
-					{
-						_putchar(format[i]);
-						_putchar(format[i + 1]);
-						lenght_full += 2;
-						i++;
-						continue;
-					}
-					else
-						return (-1);
+					_putchar('%');
+					i++;
+					length_full++;
+					continue;
 				}
-				lenght_full += f(arg_list);
+				f_print = RCL(&format[i + 1]);
+				if (f_print == NULL && format[i + 1])
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					length_full += 2;
+					i++;
+					continue;
+				}
+
+				length_full += f_print(arg_list);
 				i++;
-			}
-			else
-			{
-				_putchar(format[i]);
-				lenght_full++;
 			}
 		}
 	}
 	else
 		return (-1);
-
-	return (lenght_full);
+	return (length_full);
 }
