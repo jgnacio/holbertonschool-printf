@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 						_putchar(format[i]);
 						_putchar(format[i + 1]);
 						lenght_full += 2;
-						i++;
+						i += 2;
 						continue;
 					}
 					else
