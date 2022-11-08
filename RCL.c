@@ -7,7 +7,7 @@
  *
  * Return: The function asociated to data_type.
  */
-int (*RCL(const char *format))(va_list arg)
+int (*RCL(const char *format))()
 {
 	t_func data_type[] = {
 		{'s', print_str},
