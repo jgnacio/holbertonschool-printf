@@ -2,6 +2,7 @@
 #define _PRINTF_H
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 
 typedef struct typefunctions
 {
@@ -15,6 +16,6 @@ int print_spaces(int count_spc);
 int print_c(va_list arg);
 int print_str(va_list arg);
 int print_int(va_list arg);
-void _putchar(char c);
+int _putchar(char c);
 
 #endif
