@@ -21,7 +21,8 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == '%')
 				{
 					_putchar('%');
-					length_full = i;
+					i++;
+					length_full++;
 					continue;
 				}
 				f_print = RCL(&format[i + 1]);
@@ -35,14 +36,12 @@ int _printf(const char *format, ...)
 				}
 				length_full += f_print(arg_list);
 				i++;
+				continue;
 			}
 			else if (format[i] == '%')
 				return (-1);
-			else
-			{
-				_putchar(format[i]);
-				length_full++;
-			}
+			_putchar(format[i]);
+			length_full++;
 		}
 	}
 	else
