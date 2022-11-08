@@ -8,10 +8,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
+	int i, (*f_print)(va_list), length_full = 0;
 	va_list arg_list;
-	int (*f_print)(va_list);
-	int length_full = 0;
 
 	if (format)
 	{
@@ -20,7 +18,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%')
 			{
-				if (format[i + 1] == '%')
+				if (format[i + 1] == '%' && format[i + 1])
 				{
 					_putchar('%');
 					i++;
@@ -39,6 +37,11 @@ int _printf(const char *format, ...)
 
 				length_full += f_print(arg_list);
 				i++;
+			}
+			else
+			{
+				_putchar(format[i]);
+				length_full++;
 			}
 		}
 	}
