@@ -23,12 +23,19 @@ int _printf(const char *format, ...)
 				f = RCL(&format[i + 1]);
 				if (f == NULL)
 				{
-					if (format[i + 1] || format[i + 1] == '%')
+					if (format[i + 1] == '%')
+					{
+						_putchar('%');
+						lenght_full++;
+						i++;
+						continue;
+					}
+					else if (format[i + 1])
 					{
 						_putchar(format[i]);
 						_putchar(format[i + 1]);
 						lenght_full += 2;
-						i += 2;
+						i++;
 						continue;
 					}
 					else
