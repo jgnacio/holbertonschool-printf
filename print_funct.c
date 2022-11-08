@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
+ * print_str - Function that print a string.
+ * @arg: The list of variable arguments of _printf function.
  *
- *
- *
+ * Return: The lenght of the string or -1 if is NULL.
  */
 int print_str(va_list arg)
 {
@@ -14,19 +15,28 @@ int print_str(va_list arg)
 	{
 		aux = va_arg(arg, char*);
 
-		for (i = 0; aux[i]; i++)
+		if (aux != NULL)
 		{
-			_putchar(aux[i]);
+			for (i = 0; aux[i]; i++)
+			{
+				_putchar(aux[i]);
+			}
+			return (i);
 		}
-		return (i);
+		else
+		{
+			write(1, "(null)", 6);
+			return (6);
+		}
 	}
 	return (-1);
 }
 
 /**
+ * print_c - Function that print a character.
+ * @arg: The list of variable arguments of _printf function.
  *
- *
- *
+ * Return: 1 or -1 if arg is NULL.
  */
 int print_c(va_list arg)
 {
@@ -35,21 +45,20 @@ int print_c(va_list arg)
 		_putchar(va_arg(arg, int));
 		return (1);
 	}
-	return (0);
+	return (-1);
 }
 /**
+ * print_int - Function that print a integer.
+ * @arg: The list of variable arguments of _printf function.
  *
- *
- *
+ * Return: The number of bytes need to print the integer.
  */
 int print_int(va_list arg)
 {
 	if (arg)
 	{
-		_putchar('I');
-		_putchar('N');
-		_putchar('T');
-		_putchar('\n');
+		write(1, "INT\n", 4);
 	}
 	return (1);
 }
+
