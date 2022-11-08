@@ -36,13 +36,13 @@ int _printf(const char *format, ...)
 				length_full += f_print(arg_list);
 				i++;
 			}
-			else if (format[i + 1])
+			else if (format[i] == '%')
+				return (-1);
+			else
 			{
 				_putchar(format[i]);
 				length_full++;
 			}
-			else
-				return (-1);
 		}
 	}
 	else
