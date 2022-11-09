@@ -14,8 +14,7 @@ int print_str(va_list arg)
 	if (arg)
 	{
 		aux = va_arg(arg, char*);
-
-		if (aux != NULL)
+		if (aux)
 		{
 			for (i = 0; aux[i]; i++)
 			{
@@ -55,10 +54,34 @@ int print_c(va_list arg)
  */
 int print_int(va_list arg)
 {
+	int num;
+	int count; 
+
 	if (arg)
 	{
-		write(1, "INT\n", 4);
+		num = va_arg(arg, int);
+		if (num == 0)
+		{
+			_putchar('0');
+			return (1);
+		}
+		count = printnumber(num);
 	}
-	return (1);
+	return (count);
 }
 
+int printnumber(int n)
+{
+	int count = 0;
+
+	if (n < 0) {
+		_putchar('-');
+		n = -n;
+		count++;
+	}
+	if (n / 10)
+		count += printnumber(n / 10);
+	count++;
+	_putchar(n % 10 + '0');
+	return (count);
+}

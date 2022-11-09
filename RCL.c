@@ -10,6 +10,8 @@
 int (*RCL(const char *format))()
 {
 	t_func data_type[] = {
+		{'i', print_int},
+		{'d', print_int},
 		{'s', print_str},
 		{'c', print_c},
 		{'\0', NULL}
