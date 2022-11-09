@@ -70,18 +70,19 @@ int print_int(va_list arg)
 	return (count);
 }
 
-int printnumber(int n)
+int printnumber(long n)
 {
 	int count = 0;
 
 	if (n < 0) {
 		_putchar('-');
-		n = -n;
+		n *= -1;
 		count++;
 	}
 	if (n / 10)
 		count += printnumber(n / 10);
 	count++;
+
 	_putchar(n % 10 + '0');
 	return (count);
 }

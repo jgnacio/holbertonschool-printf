@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
 typedef struct typefunctions
 {
@@ -17,6 +18,6 @@ int print_c(va_list arg);
 int print_str(va_list arg);
 int print_int(va_list arg);
 int _putchar(char c);
-int printnumber(int n);
+int printnumber(long n);
 
 #endif
