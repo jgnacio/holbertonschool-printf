@@ -1,0 +1,32 @@
+.TH _printf 0 "10 Nov 2022" "1.0" "_printf man page"
+
+.SH NAME
+_printf
+
+.SH SYNOPSIS
+int _printf(const char *format, ...);
+.br
+_printf([FORMAT], [VARIABLES...]);
+
+.SH DESCRIPTION
+This prototype (_printf) works the same as the original one (printf). This function recieves as paramethers a const char *format, a variadic list of arguments and return the number of characters printed.
+.PP
+c - It's the flag that is asociated to the function wich prints a single character.
+.PP
+s - It's the flag that is asociated to the function wich prints a string.
+.PP
+d - It's the flag that is asociated to the function wich prints a decimal in base 10 number.
+.PP
+i - It's the flag that is asociated to the function wich prints an integer in base 10 number.
+.PP
+
+.SH FILES
+_printf.c, RCL.c, print_funct.c, _putchar.c, main.h
+
+.SH SEE ALSO
+https://github.com/jgnacio/holbertonschool-printf
+
+.SH AUTHOR
+Gabriel Blasina, email: 5722@holbertonstudents.com, adress: Jacksonville, Holberton School (Uruguay).
+.br
+Ignacio Gómez, email: 5727@holbertonstudents.com , adress: Jacksonville, Holberton School (Uruguay).
