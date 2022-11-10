@@ -1,4 +1,4 @@
-#_printf
+# _printf
 ###### Grabriel Blasina and Ignacio Gómez - 10/11/2022
 This is our first group project at  Holberton School. This project is about an implementation of "printf" function. Our prototype (_printf) works the same as the original one (printf). This function recieves as paramethers a const char *format, a variadic list of arguments and return the number of characters printed.
 ```C
