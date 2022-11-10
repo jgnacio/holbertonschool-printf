@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 					length_full++;
 					continue;
 				}
-				f_print = RCL(&format[i + 1]);
+				f_print = RCL(format[i + 1]);
 				if (f_print == NULL && format[i + 1])
 				{
 					_putchar(format[i]);
