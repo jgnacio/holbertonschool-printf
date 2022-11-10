@@ -24,21 +24,23 @@ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 ## Examples
     /* Example for _printf() */
     #include <main.h>
-    ​
+	
     int main(){
-	/* Input */
-	_printf ("Characters: %c %c \n", 'z', 80);
-	/* output: z P
-	 $*/
-    _printf ("Integers: %i %d \n", -3456, 3456);
+		/* Input */
+		_printf ("Characters: %c %c \n", 'z', 80);
+		/* output: z P
+	 	$*/
+    	_printf ("Integers: %i %d \n", -3456, 3456);
 		/* output: -3456 3456
-	 $*/
-	_printf ("Decimals: %d %ld\n", INT_MIN, INT_MAX);
-	/* output: -2147483648 +2147483647
-	 $*/
-	 _printf ("Strings: %s %s \n", "hello", "world");
-	/* output: hello world
-	 $*/
+	 	$*/
+		_printf ("Decimals: %d %ld\n", INT_MIN, INT_MAX);
+		/* output: -2147483648 +2147483647
+	 	$*/
+	 	_printf ("Strings: %s %s \n", "hello", "world");
+		/* output: hello world
+	 	$*/
+	 	return (0);
+	 }
 ## Files
 - [_printf.c](https://github.com/jgnacio/holbertonschool-printf/_printf.c "_printf.c") - Main code.
 - [RCL.c](https://github.com/jgnacio/holbertonschool-printf/blob/main/RCL.c "RCL.c") - file that returns function to be executed.
