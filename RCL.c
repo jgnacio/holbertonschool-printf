@@ -7,7 +7,7 @@
  *
  * Return: The function asociated to data_type.
  */
-int (*RCL(const char *format))()
+int (*RCL(const char format))()
 {
 	t_func data_type[] = {
 		{'i', print_int},
@@ -21,7 +21,7 @@ int (*RCL(const char *format))()
 
 	for (i = 0; data_type[i].identifier; i++)
 	{
-		if (format[0] == data_type[i].identifier)
+		if (format == data_type[i].identifier)
 		{
 			return (data_type[i].function);
 		}
