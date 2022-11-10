@@ -20,6 +20,45 @@ d - It's the flag that is asociated to the function wich prints a decimal in bas
 i - It's the flag that is asociated to the function wich prints an integer in base 10 number.
 .PP
 
+.SH EXAMPLES
+/* Example for _printf() */
+.br
+#include <main.h>
+.PP
+
+int main(){
+.br
+	/* Input */
+.br
+	_printf ("Characters: %c %c \n", 'z', 80);
+.br
+	/* output: z P
+.br
+ 	$*/
+.br
+	_printf ("Integers: %i %d \n", -3456, 3456);
+.br
+	/* output: -3456 3456
+.br
+ 	$*/
+.br
+	_printf ("Decimals: %d %ld\n", INT_MIN, INT_MAX);
+.br
+	/* output: -2147483648 +2147483647
+.br
+ 	$*/
+.br
+ 	_printf ("Strings: %s %s \n", "hello", "world");
+.br
+	/* output: hello world
+.br
+ 	$*/
+.br
+ 	return (0);
+.br
+ }
+.br
+
 .SH FILES
 _printf.c, RCL.c, print_funct.c, _putchar.c, main.h
 
