@@ -23,6 +23,7 @@ int _printf(const char *format, ...);
 - [main.h](https://github.com/jgnacio/holbertonschool-printf/blob/main/main.h "main.h") - File where prototypes of each function and structrure of identifier and functions are allocated.
 
 ## Flowchart _fprint
+![printf_flowchart](https://user-images.githubusercontent.com/96546108/201151545-5dee2b2a-4228-4963-a6c2-d59d5e54a930.png)
 
 ## Flowchart RCL.c
 
